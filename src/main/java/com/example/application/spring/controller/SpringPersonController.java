@@ -50,5 +50,6 @@ public class SpringPersonController {
     public Response get(@PathVariable String personId) {
 
         return Response.ok(controller.findPersonById(personId));
+
     }
 }
