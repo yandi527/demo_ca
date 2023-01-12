@@ -14,18 +14,6 @@ public class Person {
     Date lastModifyTime;
     PersonStatus status;
 
-    public Person create(){
-        this.createTime = new Date();
-        this.status = PersonStatus.ENABLE;
-        return this;
-    }
-
-    public Person enable(){
-        this.lastModifyTime = new Date();
-        this.status = PersonStatus.ENABLE;
-        return this;
-    }
-
     public Person disable(){
         this.lastModifyTime = new Date();
         this.status = PersonStatus.DISABLE;

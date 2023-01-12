@@ -31,7 +31,7 @@ public class SpringPersonController {
     @PutMapping
     public Response update(@RequestBody PersonDTO personDTO) {
         try {
-            controller.createPerson(personDTO);
+            controller.updatePerson(personDTO);
             return Response.ok();
         } catch (ParseException e) {
             log.error("", e);
@@ -41,11 +41,14 @@ public class SpringPersonController {
 
     @DeleteMapping("/{personId}")
     public Response delete(@PathVariable String personId) {
+
+        controller.deletePerson(personId);
         return Response.ok();
     }
 
     @GetMapping("/{personId}")
     public Response get(@PathVariable String personId) {
+
         return Response.ok(controller.findPersonById(personId));
     }
 }
